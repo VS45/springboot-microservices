@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,7 @@ public class EmployeeController {
      private static final Logger LOGGER=LoggerFactory.getLogger(EmployeeController.class);
     @Autowired
     private EmployeeRepository employeeRepository;
+    @PostMapping
      public Employee addEmployee(@RequestBody Employee employee){
         LOGGER.info("Department add: {}",employee); 
 return employeeRepository.addEmployee(employee);
